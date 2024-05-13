@@ -1,6 +1,6 @@
-// Adds a 16x16 grid
+// adds a 16x16 grid
 
-const gridContainer = document.getElementById('grid-container')
+const gridContainer = document.getElementById('grid-container');
 
 const addRows = () => {
     // Creates row elements
@@ -14,10 +14,18 @@ const addRows = () => {
             gridItem.classList.add('grid-item');
             row.appendChild(gridItem);
         }
-
         // Append row to the grid container
         gridContainer.appendChild(row);
     }
 }
 
 addRows();
+
+// changes color of the grid item
+function changeColor() {
+    document.querySelectorAll('.grid-item').forEach(item => item.addEventListener('mouseover', () => {
+        item.classList.add('white-grid-item');
+    }));
+}
+
+changeColor();

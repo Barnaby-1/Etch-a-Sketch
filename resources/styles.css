@@ -14,6 +14,7 @@ html {
     justify-content: center;
     height: 500px;
     width: 500px;
+    border: solid white 1.5px;
 }
 
 .grid-row {
@@ -22,8 +23,10 @@ html {
 }
 
 .grid-item {
-    border: solid grey 2px;
-    background-color: grey;
+    background-color: #000;
     width: 100%;
-    margin: 3px;
+}
+
+.white-grid-item {
+    background-color: #eee;
 }
