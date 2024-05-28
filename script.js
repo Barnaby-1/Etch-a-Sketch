@@ -42,7 +42,7 @@ changeColor();
 newGridButton.addEventListener('click', () => {
     const numStr = prompt('Enter a new grid size from 16 to 50.');
     // If cancel is clicked the prompt closes
-    if (numStr = null) {
+    if (numStr == null) {
         return;
     }
     // Checks if the user has entered a number between the set quantities and throws an alert if they haven't
