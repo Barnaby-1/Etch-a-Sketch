@@ -2,7 +2,6 @@ const gridContainer = document.getElementById('grid-container');
 const newGridButton = document.getElementById('new-grid');
 
 
-
 // adds rows to the grid
 const addRows = rowNum => {
     // Ensures the existing grid is cleared before creating a new one
@@ -53,3 +52,20 @@ newGridButton.addEventListener('click', () => {
        alert('Enter a number between 16 and 50.');
     }
 });
+
+const generateRandomNumber = () => {
+    const randomNumber = Math.round(Math.random() * 255 + 1);
+}
+
+const generateRandomColour = element => {
+    const r = generateRandomNumber();
+    const g = generateRandomNumber();
+    const b = generateRandomNumber();
+    const rgb = `rgb(${r}, ${g}, ${b});`
+}
+
+const randomizeSquareColour = () => {
+    generateRandomColour(document.getElementById('grid-item').style.backgroundColor);
+}
+
+randomizeSquareColour();
