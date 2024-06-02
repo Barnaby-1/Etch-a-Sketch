@@ -2,7 +2,7 @@ const gridContainer = document.getElementById('grid-container');
 const newGridButton = document.getElementById('new-grid');
 
 
-// adds rows to the grid
+// Adds rows to the grid
 const addRows = rowNum => {
     // Ensures the existing grid is cleared before creating a new one
     gridContainer.innerHTML = '';
@@ -29,10 +29,23 @@ const addRows = rowNum => {
 // The default amount of rows added when the first grid is generated
 addRows(16);
 
-// changes color of the grid item
+// Generates a number from 0 to 255
+const generateRandomNumber = () => {
+    return Math.floor(Math.random() * 256);
+}
+
+// Generates a random colour in rgb format
+const generateRandomColour = element => {
+    const r = generateRandomNumber();
+    const g = generateRandomNumber();
+    const b = generateRandomNumber();
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
+// Changes color of the grid item
 function changeColor() {
     document.querySelectorAll('.grid-item').forEach(item => item.addEventListener('mouseover', () => {
-        item.classList.add('white-grid-item');
+        item.style.backgroundColor = generateRandomColour();
     }));
 }
 changeColor();
@@ -52,20 +65,3 @@ newGridButton.addEventListener('click', () => {
        alert('Enter a number between 16 and 50.');
     }
 });
-
-const generateRandomNumber = () => {
-    const randomNumber = Math.round(Math.random() * 255 + 1);
-}
-
-const generateRandomColour = element => {
-    const r = generateRandomNumber();
-    const g = generateRandomNumber();
-    const b = generateRandomNumber();
-    const rgb = `rgb(${r}, ${g}, ${b});`
-}
-
-const randomizeSquareColour = () => {
-    generateRandomColour(document.getElementById('grid-item').style.backgroundColor);
-}
-
-randomizeSquareColour();
